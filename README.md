@@ -19,23 +19,23 @@ There is no public dataset of real Tesla demo-drive records, so I simulated 15,0
 
 A few things in the modeled fleet stood out:
 
-- **Conversion ranges widely by market.** Portland, OR leads at 26.3 percent while Las Vegas, NV trails at 11.9 percent — a 14-point gap. That kind of spread is exactly what a fleet team would want flagged automatically rather than discovered by accident.
+- **Conversion ranges widely by market.** Portland, OR leads at 26.3 percent while Las Vegas, NV trails at 11.9 percent, a 14-point gap. That kind of spread is exactly what a fleet team would want flagged automatically rather than discovered by accident.
 - **Weekends convert better, and it holds up statistically.** Weekend demos convert about 19 percent higher than weekday demos, significant at p < 0.001 on a two-sample t-test. If that pattern held in real data, it would argue for weighting weekend fleet availability.
 - **Longer drives correlate with conversion.** Customers who converted spent measurably longer behind the wheel, and the correlation is statistically significant. Drive duration turned out to be one of the stronger predictors in the model.
-- **About $8.9M in addressable revenue.** If the four underperforming markets reached the fleet's 19.7 percent average, the modeled incremental revenue is roughly $8.9M — a way to frame the size of the opportunity, not a forecast.
+- **About $8.9M in addressable revenue.** If the four underperforming markets reached the fleet's 19.7 percent average, the modeled incremental revenue is roughly $8.9M, a way to frame the size of the opportunity rather than a forecast.
 - **Segment and duration drive conversion most.** A logistic regression (Pseudo R² = 0.155) points to customer segment and drive duration as the strongest signals, with Tech Early Adopter and Fleet/Business buyers showing the highest odds of converting.
 
 ---
 
 ## What's in here
 
-The project mirrors the kinds of skills the role calls for — SQL, Python, statistics, dashboards, and Excel reporting.
+The project mirrors the kinds of skills the role calls for: SQL, Python, statistics, dashboards, and Excel reporting.
 
-- **Data pipeline** (`src/data/`) — generates 15,000 demo-drive records, writes them to a SQLite database with analytical views, and exports clean CSVs.
-- **Statistical analysis** (`src/analysis/`) — market/model/segment breakdowns, weekend vs. weekday t-tests, Pearson correlation on drive duration, underperforming-market detection, and a logistic regression on conversion.
-- **Streamlit dashboard** (`src/dashboard/`) — an interactive five-tab dashboard (market performance, vehicle analytics, customer segments, trends and timing, and the statistical model) with live filters. This is what's deployed at the link above.
-- **Excel report** (`src/excel/`) — a six-sheet workbook with an executive overview, pivot tables, a model-vs-region heat map, segment analysis, a raw-data sample, and VBA macro instructions.
-- **Tableau** — a separate executive view published to Tableau Public _(link above once live)_.
+- **Data pipeline** (`src/data/`) generates 15,000 demo-drive records, writes them to a SQLite database with analytical views, and exports clean CSVs.
+- **Statistical analysis** (`src/analysis/`) covers market, model, and segment breakdowns, weekend vs. weekday t-tests, Pearson correlation on drive duration, underperforming-market detection, and a logistic regression on conversion.
+- **Streamlit dashboard** (`src/dashboard/`) is an interactive five-tab dashboard (market performance, vehicle analytics, customer segments, trends and timing, and the statistical model) with live filters. This is what's deployed at the link above.
+- **Excel report** (`src/excel/`) is a six-sheet workbook with an executive overview, pivot tables, a model-vs-region heat map, segment analysis, a raw-data sample, and VBA macro instructions.
+- **Tableau** is a separate executive view published to Tableau Public _(link above once live)_.
 
 ---
 
@@ -54,7 +54,7 @@ python3.11 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# regenerate the dataset (optional — data is already committed)
+# regenerate the dataset (optional, data is already committed)
 python src/data/generate_data.py
 
 # run the analysis
@@ -68,4 +68,4 @@ streamlit run src/dashboard/app.py
 
 ## What I'd build next
 
-If this were running on real fleet data, the next steps I'd want are: a forecasting layer that flags markets likely to dip before they do, an automated weekly report that lands in stakeholders' inboxes, and a cost-per-conversion view so reallocation decisions weigh spend, not just conversion rate.
+If this were running on real fleet data, the next steps I'd want are a forecasting layer that flags markets likely to dip before they do, an automated weekly report that lands in stakeholders' inboxes, and a cost-per-conversion view so reallocation decisions weigh spend, not just conversion rate.
