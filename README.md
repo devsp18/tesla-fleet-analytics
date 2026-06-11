@@ -5,7 +5,7 @@
 Tesla's marketing fleet runs demo drives across dozens of markets in the Americas. Every one of those drives is a chance to turn someone curious into someone who buys. After reading how Tesla's North America Business Operations and Analytics team works, I wanted to understand what actually separates a demo drive that converts from one that doesn't, and where the fleet might be underperforming without anyone flagging it. So I built an end-to-end analytics system to dig into that question.
 
 **Live dashboard:** https://tesla-fleet-satyam.streamlit.app/
-**Tableau view:** _(link coming once published)_
+**Tableau view:** _https://public.tableau.com/app/profile/satyam.patel1254/viz/TeslaMarketingFleet-ConversionIntelligence/Dashboard1_
 
 ---
 
